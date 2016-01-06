@@ -1,0 +1,7 @@
+web:
+  image: php:5.6-apache
+  hostname: api-mock.dev
+  volumes:
+    - ./api-mock:/var/www/html
+    - ./api-mock/docker/mods-enabled/rewrite.load:./etc/apache2/mods-enabled/rewrite.load
+    - ./api-mock/docker/mods-enabled/mpm_prefork.conf:./etc/apache2/mods-enabled/mpm_prefork.conf

@@ -1,0 +1,20 @@
+{
+    "name": "guillem/jsonapi",
+    "require": {
+        "tobscure/json-api": "^0.2.1",
+        "ramsey/uuid": "^3.1",
+        "guzzlehttp/promises": "^1.0",
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Guillem CANAL",
+            "email": "hello@guillem.ninja"
+        }
+    ]
+}

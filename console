@@ -1,0 +1,38 @@
+#!/bin/bash
+
+PROJECT_NAME="apimock"
+
+# php with xdebug & blackfire.io (see: https://github.com/sandrokeil/docker-files/tree/master/php/5.6/xdebug)
+run_php() {
+    docker run --rm -it --volume $(pwd):/app -e PHP_IDE_CONFIG="serverName=application" --link apimock_web_1:api-mock.dev sandrokeil/php:5.6-cli-xdebug php -d xdebug.max_nesting_level=1000 -d xdebug.remote_host=192.168.99.1  $@
+}
+
+get_ip() {
+    docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${PROJECT_NAME}_web_1
+}
+
+case "$1" in
+'start')
+    docker-compose -p ${PROJECT_NAME} up -d
+    ;;
+'stop')
+    docker-compose -p ${PROJECT_NAME} stop
+    ;;
+'logs')
+    docker logs -f ${PROJECT_NAME}_web_1
+    ;;
+'ip')
+    get_ip
+    ;;
+'rm')
+    docker-compose -p ${PROJECT_NAME} stop
+    docker-compose -p ${PROJECT_NAME} rm
+    ;;
+'curl')
+    curl -s $(get_ip)${@:2}
+    ;;
+'php')
+    run_php ${@:2}
+    ;;
+esac
+

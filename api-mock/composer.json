@@ -1,0 +1,13 @@
+{
+    "name": "guillem/api_mock",
+    "require": {
+        "fzaninotto/faker": "^1.5",
+        "silex/silex": "^1.3"
+    },
+    "authors": [
+        {
+            "name": "Guillem CANAL",
+            "email": "hello@guillem.ninja"
+        }
+    ]
+}

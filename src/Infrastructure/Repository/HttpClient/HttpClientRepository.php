@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\Persistence\HttpClient;
+namespace Infrastructure\Repository\HttpClient;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\UriTemplate;

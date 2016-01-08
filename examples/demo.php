@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 // Api baseUri
 
@@ -12,12 +12,12 @@ $httpClient = new \GuzzleHttp\Client();
 
 // HttpClient Repositories
 
-$userRepository = new \Infrastructure\Persistence\HttpClient\HttpClientUserRepository(
+$userRepository = new \Infrastructure\Repository\HttpClient\HttpClientUserRepository(
     $httpClient,
     $baseUri
 );
 
-$pictureRepository = new \Infrastructure\Persistence\HttpClient\HttpClientPictureRepository(
+$pictureRepository = new \Infrastructure\Repository\HttpClient\HttpClientPictureRepository(
     $httpClient,
     $baseUri
 );

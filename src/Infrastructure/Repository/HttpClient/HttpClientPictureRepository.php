@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\Persistence\HttpClient;
+namespace Infrastructure\Repository\HttpClient;
 
 use Application\QueryService\Picture\PictureQueryRepository;
 use Application\QueryService\Picture\PicturesQueryRepository;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\Persistence\HttpClient;
+namespace Infrastructure\Repository\HttpClient;
 
 use Application\QueryService\User\FriendsQueryRepository;
 use Application\QueryService\User\UserQueryRepository;
